@@ -1,0 +1,32 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #59636e;
+  --link: #1f5fbf;
+  --rule: #d8dee4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #9198a1;
+    --link: #6cb1ff;
+    --rule: #30363d;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+  line-height: 1.8;
+}
+main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+h1 { font-size: 1.8rem; line-height: 1.4; margin: 0.4em 0 0.6em; }
+h2 { font-size: 1.15rem; margin: 2em 0 0.5em; padding-top: 1em; border-top: 1px solid var(--rule); }
+a { color: var(--link); }
+.lead { font-size: 1.1rem; font-weight: 600; }
+.date { color: var(--muted); font-size: 0.9rem; margin-top: 2em; }
+nav { display: flex; gap: 24px; margin-top: 2.5em; padding-top: 1em; border-top: 1px solid var(--rule); }
+ul { padding-left: 1.4em; }
