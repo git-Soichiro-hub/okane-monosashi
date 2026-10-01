@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TikTok の認可｜お金のものさし</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  code.big { display: block; padding: 12px 16px; font-size: 1.05rem; word-break: break-all; border: 1px solid var(--rule); border-radius: 6px; user-select: all; }
+  button { font: inherit; padding: 8px 16px; margin-top: 12px; cursor: pointer; }
+  .error { color: #b42318; }
+</style>
+</head>
+<body>
+<main>
+  <p><a href="index.html">お金のものさし</a></p>
+  <h1>TikTok の認可</h1>
+  <p>運営ツール（<code>daily/post_tiktok.py --auth</code>）の認可の受け取りページです。運営者本人だけが使います。</p>
+
+  <div id="ok" hidden>
+    <p>認可できました。下の <strong>code</strong> を、端末で待っている <code>post_tiktok.py --auth</code> に貼り付けてください（このコードは数分で使えなくなります）。</p>
+    <code class="big" id="code"></code>
+    <button type="button" id="copy">コピー</button>
+    <p class="date">このページは URL に含まれる code を表示するだけで、どこにも送りません。貼り付けたら、このタブは閉じてください。</p>
+  </div>
+
+  <div id="ng" hidden>
+    <p class="error">認可できませんでした: <span id="reason"></span></p>
+    <p>端末で <code>post_tiktok.py --auth</code> をやり直してください。</p>
+  </div>
+
+  <div id="none" hidden>
+    <p>URL に code がありません。このページは TikTok のログイン画面から戻ってきたときに使うものです。</p>
+  </div>
+
+  <script>
+    (function () {
+      var q = new URLSearchParams(location.search);
+      var code = q.get("code"), error = q.get("error");
+      if (code) {
+        document.getElementById("code").textContent = code;
+        document.getElementById("ok").hidden = false;
+        document.getElementById("copy").addEventListener("click", function () {
+          navigator.clipboard && navigator.clipboard.writeText(code).then(function () {
+            document.getElementById("copy").textContent = "コピーしました";
+          });
+        });
+      } else if (error) {
+        document.getElementById("reason").textContent = error + (q.get("error_description") ? "（" + q.get("error_description") + "）" : "");
+        document.getElementById("ng").hidden = false;
+      } else {
+        document.getElementById("none").hidden = false;
+      }
+      // 履歴に code を残さない（表示は済んでいる）
+      if (code || error) { try { history.replaceState(null, "", location.pathname); } catch (e) {} }
+    })();
+  </script>
+</main>
+</body>
+</html>
