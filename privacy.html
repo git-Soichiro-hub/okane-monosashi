@@ -10,25 +10,28 @@
 <main>
   <p><a href="index.html">お金のものさし</a></p>
   <h1>プライバシーポリシー</h1>
-  <p>YouTube チャンネル「お金のものさし」の運営者（以下「運営者」）は、運営ツール（以下「本ツール」）で扱う情報について、次のとおり定めます。</p>
+  <p>「お金のものさし」（YouTube・Instagram・TikTok）の運営者（以下「運営者」）は、運営ツール（以下「本ツール」）で扱う情報について、次のとおり定めます。</p>
 
   <h2>1. 本ツールの利用者</h2>
-  <p>本ツールは運営者本人だけが使う運営ツールです。運営者以外の方の Google アカウントやチャンネルの情報は取得しません。</p>
+  <p>本ツールは運営者本人だけが使う運営ツールです。運営者以外の方の Google・Instagram・TikTok のアカウントやチャンネルの情報は取得しません。</p>
 
   <h2>2. 取得する情報と行う操作</h2>
-  <p>運営者が Google アカウントで許可した次の範囲で、運営者自身のチャンネルの情報を読み取り、運営者自身の動画を登録します。ほかの方のチャンネルや動画には触れません。</p>
+  <p>運営者が各サービスで許可した次の範囲で、運営者自身のアカウントの情報を読み取り、運営者自身が作った動画・画像を登録します。ほかの方のアカウントや投稿には触れません。</p>
   <ul>
     <li><strong>YouTube Data API（youtube）</strong>: チャンネルの基本情報、動画の一覧、動画ごとの公開統計（視聴回数など）の読み取り。運営者が作った動画の非公開でのアップロードと、タイトル・説明文・タグの設定。運営者のチャンネルの再生リストの作成と、動画の追加</li>
     <li><strong>YouTube Analytics API・YouTube Reporting API（yt-analytics.readonly）</strong>: チャンネルのアナリティクスの数値（視聴回数、総再生時間、平均視聴時間、登録者の増減、インプレッション数、インプレッションのクリック率など）の読み取り</li>
+    <li><strong>Instagram API（Instagram ログイン）</strong>: 運営者のアカウントの基本情報（ID・ユーザー名・アカウントの種類）と、1日の投稿数の上限の読み取り。運営者が作った動画（リール）と画像（カルーセル）の投稿</li>
+    <li><strong>TikTok Login Kit（user.info.basic）</strong>: 運営者のアカウントの基本情報（表示名・アイコン）の読み取り</li>
+    <li><strong>TikTok Content Posting API（video.upload）</strong>: 運営者が作った動画を、運営者の TikTok アカウントの受信箱（下書き）に送ること。キャプションを付けて投稿する操作は、運営者が TikTok アプリで行います</li>
   </ul>
-  <p>動画の公開は運営者が YouTube Studio で行います。本ツールが動画を削除することはありません。</p>
+  <p>YouTube の動画の公開は運営者が YouTube Studio で、TikTok の投稿は運営者が TikTok アプリで行います。本ツールが動画や投稿を削除することはありません。</p>
 
   <h2>3. 利用目的</h2>
-  <p>取得した情報は、運営者自身のチャンネルの月次目標・週次計画を立てることと、その振り返りにだけ使います。アップロードは、運営者が作った動画を運営者のチャンネルに登録するためだけに行います。</p>
+  <p>取得した情報は、運営者自身のチャンネルの月次目標・週次計画を立てることと、その振り返りにだけ使います。アップロードと投稿は、運営者が作った動画・画像を運営者自身のアカウントに登録するためだけに行います。</p>
 
   <h2>4. 保存と第三者への提供</h2>
   <ul>
-    <li>取得した情報と認可のトークンは、運営者のパソコンの中に保存します。</li>
+    <li>取得した情報と認可のトークンは、運営者のパソコンの中に保存します。サーバーには保存しません。</li>
     <li>計画の案を作るために、集計した数値を AI（Anthropic 社の Claude）に渡すことがあります。</li>
     <li>上記のほかに第三者へ提供・販売することはなく、広告に使うこともありません。</li>
   </ul>
@@ -40,14 +43,31 @@
   <p>本ツールは YouTube API サービスを使用しています。あわせて <a href="https://www.youtube.com/t/terms">YouTube 利用規約</a> と <a href="https://policies.google.com/privacy">Google プライバシーポリシー</a> をご確認ください。</p>
 
   <h2>7. 保存期間・削除・アクセスの取り消し</h2>
-  <p>運営者は、保存した情報をいつでも削除できます。本ツールへのアクセスの許可は、<a href="https://myaccount.google.com/permissions">Google アカウントの「サードパーティ製のアプリとサービス」</a>からいつでも取り消せます。取り消すと、本ツールは情報を取得できなくなります。</p>
+  <p>運営者は、保存した情報をいつでも削除できます。本ツールへのアクセスの許可は、次の場所からいつでも取り消せます。取り消すと、本ツールは情報の取得も投稿もできなくなります。</p>
+  <ul>
+    <li>Google: <a href="https://myaccount.google.com/permissions">Google アカウントの「サードパーティ製のアプリとサービス」</a></li>
+    <li>Instagram: アプリの「設定 → アプリとウェブサイト」</li>
+    <li>TikTok: アプリの「設定とプライバシー」の中にある、連携しているアプリの管理</li>
+  </ul>
 
-  <h2>8. お問い合わせ</h2>
+  <h2>8. Instagram・TikTok</h2>
+  <p>本ツールは Instagram API と TikTok for Developers のサービスを使用しています。あわせて <a href="https://help.instagram.com/581066165581870">Instagram 利用規約</a>、<a href="https://www.tiktok.com/legal/terms-of-service">TikTok 利用規約</a>、<a href="https://www.tiktok.com/legal/privacy-policy">TikTok プライバシーポリシー</a> をご確認ください。</p>
+
+  <h2>9. お問い合わせ</h2>
   <p>本ポリシーに関するお問い合わせは、<a href="https://www.youtube.com/@%E3%81%8A%E9%87%91%E3%81%AE%E3%82%82%E3%81%AE%E3%81%95%E3%81%97">YouTube チャンネル「お金のものさし」</a>までお寄せください。</p>
 
-  <h2>9. 改定</h2>
+  <h2>10. 改定</h2>
   <p>本ポリシーを改定するときは、このページを更新します。</p>
-  <p class="date">制定日: 2026年10月1日</p>
+  <p class="date">制定日: 2026年10月1日　改定日: 2026年10月2日（Instagram・TikTok の記述を追加）</p>
+
+  <h2>English summary</h2>
+  <p>This is an internal tool used only by the operator of the channel "Okane no Monosashi" (お金のものさし). It has a single user, the operator, and is not offered to the public.</p>
+  <ul>
+    <li><strong>What it accesses</strong>: only the operator's own accounts, within the permissions the operator grants. YouTube: channel statistics, and private upload of the operator's own videos. Instagram: basic account information, and publishing the operator's own Reels and image carousels. TikTok: basic profile information (<code>user.info.basic</code>), and sending the operator's own videos to the operator's TikTok inbox as drafts (<code>video.upload</code>); the operator completes each post in the TikTok app.</li>
+    <li><strong>What it does not do</strong>: it does not access any other person's account or content, and it does not delete videos or posts.</li>
+    <li><strong>Storage and sharing</strong>: data and access tokens are stored only on the operator's own computer. Nothing is sold, shared with third parties or used for advertising. Aggregated statistics may be passed to an AI assistant (Anthropic's Claude) to draft the operator's posting plan.</li>
+    <li><strong>Revoking access</strong>: the operator can delete stored data at any time and revoke access from the Google, Instagram or TikTok account settings.</li>
+  </ul>
 </main>
 </body>
 </html>
