@@ -21,7 +21,7 @@
     <li><strong>YouTube Data API（youtube）</strong>: チャンネルの基本情報、動画の一覧、動画ごとの公開統計（視聴回数など）の読み取り。運営者が作った動画の非公開でのアップロードと、タイトル・説明文・タグ・サムネイル・予約公開の日時の設定。運営者のチャンネルの再生リストの作成と、動画の追加。公開された運営者自身の動画への、投稿者としてのコメント（出典など）の書き込み</li>
     <li><strong>YouTube Data API（API キー。ログインなし）</strong>: 比較の参考にする同じ分野のチャンネルの、一般に公開されている統計（登録者数・動画数・視聴回数・動画の公開日）の読み取り</li>
     <li><strong>YouTube Analytics API・YouTube Reporting API（yt-analytics.readonly）</strong>: チャンネルのアナリティクスの数値（視聴回数、総再生時間、平均視聴時間、登録者の増減、インプレッション数、インプレッションのクリック率など）の読み取り</li>
-    <li><strong>Instagram API（Instagram ログイン）</strong>: 運営者のアカウントの基本情報（ID・ユーザー名・アカウントの種類）と、1日の投稿数の上限の読み取り。運営者が作った動画（リール）と画像（カルーセル）の投稿</li>
+    <li><strong>Instagram API（Instagram ログイン）</strong>: 運営者のアカウントの基本情報（ID・ユーザー名・アカウントの種類）と、1日の投稿数の上限の読み取り。運営者が作った動画（リール）と画像（カルーセル）の投稿。運営者の投稿の数値（再生数・いいね・保存など）と、運営者の投稿に付いたコメント（本文・書いた方のユーザー名・日時）の読み取り</li>
     <li><strong>TikTok Login Kit（user.info.basic）</strong>: 運営者のアカウントの基本情報（表示名・アイコン）の読み取り</li>
     <li><strong>TikTok Content Posting API（video.upload）</strong>: 運営者が作った動画を、運営者の TikTok アカウントの受信箱（下書き）に送ること。キャプションを付けて投稿する操作は、運営者が TikTok アプリで行います</li>
   </ul>
@@ -34,7 +34,8 @@
   <ul>
     <li>取得した情報と認可のトークンは、運営者のパソコンの中に保存します。サーバーには保存しません。</li>
     <li>ほかのチャンネルの公開されている統計は、取得から 30 日を過ぎたものを削除します。</li>
-    <li>計画の案を作るために、集計した数値を AI（Anthropic 社の Claude）に渡すことがあります。</li>
+    <li>運営者の投稿に付いたコメントは、視聴者の反応を知り、次の動画の題材や説明を見直すためにだけ使います。保存したコメントは、取得から 90 日を過ぎたものを削除します。</li>
+    <li>計画の案を作るために、集計した数値と、コメントの本文（書いた方のユーザー名は除く）を AI（Anthropic 社の Claude）に渡すことがあります。</li>
     <li>上記のほかに第三者へ提供・販売することはなく、広告に使うこともありません。</li>
   </ul>
 
@@ -44,7 +45,8 @@
   <h2>6. YouTube API サービス</h2>
   <p>本ツールは YouTube API サービスを使用しています。あわせて <a href="https://www.youtube.com/t/terms">YouTube 利用規約</a> と <a href="https://policies.google.com/privacy">Google プライバシーポリシー</a> をご確認ください。</p>
 
-  <h2>7. 保存期間・削除・アクセスの取り消し</h2>
+  <h2 id="deletion">7. 保存期間・削除・アクセスの取り消し</h2>
+  <p>運営者の投稿にコメントを書いた方は、Instagram のダイレクトメッセージで <a href="https://www.instagram.com/okane_monosashi/">@okane_monosashi</a> に連絡すれば、本ツールが保存したその方のコメントの削除を求められます。運営者は連絡から 30 日以内に削除し、その旨を返信します。Instagram でコメントを削除した場合も、次の取得のときに本ツールの記録から消えます。</p>
   <p>運営者は、保存した情報をいつでも削除できます。本ツールへのアクセスの許可は、次の場所からいつでも取り消せます。取り消すと、本ツールは情報の取得も投稿もできなくなります。</p>
   <ul>
     <li>Google: <a href="https://myaccount.google.com/permissions">Google アカウントの「サードパーティ製のアプリとサービス」</a></li>
@@ -60,15 +62,16 @@
 
   <h2>10. 改定</h2>
   <p>本ポリシーを改定するときは、このページを更新します。</p>
-  <p class="date">制定日: 2026年10月1日　改定日: 2026年10月2日（Instagram・TikTok の記述を追加）、2026年11月14日（YouTube の予約公開・コメント・公開統計の記述を追加）</p>
+  <p class="date">制定日: 2026年10月1日　改定日: 2026年10月2日（Instagram・TikTok の記述を追加）、2026年11月14日（YouTube の予約公開・コメント・公開統計の記述を追加）、2026年11月19日（Instagram のコメントの読み取りと、削除の求め方を追加）</p>
 
   <h2>English summary</h2>
   <p>This is an internal tool used only by the operator of the channel "Okane no Monosashi" (お金のものさし). It has a single user, the operator, and is not offered to the public.</p>
   <ul>
-    <li><strong>What it accesses</strong>: only the operator's own accounts, within the permissions the operator grants. YouTube: channel statistics; private upload of the operator's own videos with their title, description, tags, thumbnail and scheduled publish time; adding them to the operator's playlists; and posting a comment as the channel owner on the operator's own published videos. Publicly available statistics of a few comparable channels (subscriber, video and view counts) are read with an API key, without login, and deleted after 30 days. Instagram: basic account information, and publishing the operator's own Reels and image carousels. TikTok: basic profile information (<code>user.info.basic</code>), and sending the operator's own videos to the operator's TikTok inbox as drafts (<code>video.upload</code>); the operator completes each post in the TikTok app.</li>
+    <li><strong>What it accesses</strong>: only the operator's own accounts, within the permissions the operator grants. YouTube: channel statistics; private upload of the operator's own videos with their title, description, tags, thumbnail and scheduled publish time; adding them to the operator's playlists; and posting a comment as the channel owner on the operator's own published videos. Publicly available statistics of a few comparable channels (subscriber, video and view counts) are read with an API key, without login, and deleted after 30 days. Instagram: basic account information, publishing the operator's own Reels and image carousels, insights of the operator's own posts, and reading comments on the operator's own posts (text, commenter username and time) to understand viewer feedback; stored comments are deleted after 90 days. TikTok: basic profile information (<code>user.info.basic</code>), and sending the operator's own videos to the operator's TikTok inbox as drafts (<code>video.upload</code>); the operator completes each post in the TikTok app.</li>
     <li><strong>What it does not do</strong>: it does not sign in to or act on any other person's account or content, and it does not delete videos or posts.</li>
     <li><strong>Storage and sharing</strong>: data and access tokens are stored only on the operator's own computer. Nothing is sold, shared with third parties or used for advertising. Aggregated statistics may be passed to an AI assistant (Anthropic's Claude) to draft the operator's posting plan.</li>
     <li><strong>Revoking access</strong>: the operator can delete stored data at any time and revoke access from the Google, Instagram or TikTok account settings.</li>
+    <li id="deletion-en"><strong>Data deletion</strong>: anyone who commented on the operator's posts can ask for their stored comments to be deleted by sending a direct message to <a href="https://www.instagram.com/okane_monosashi/">@okane_monosashi</a> on Instagram. The operator deletes them within 30 days and replies to confirm. Comments deleted on Instagram are also removed from the tool's records at the next fetch.</li>
   </ul>
 </main>
 </body>
