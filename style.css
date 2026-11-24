@@ -30,3 +30,8 @@ a { color: var(--link); }
 .date { color: var(--muted); font-size: 0.9rem; margin-top: 2em; }
 nav { display: flex; gap: 24px; margin-top: 2.5em; padding-top: 1em; border-top: 1px solid var(--rule); }
 ul { padding-left: 1.4em; }
+.button { display: inline-block; padding: 12px 20px; border-radius: 8px; background: #c8102e; color: #ffffff; font-weight: 700; text-decoration: none; }
+.sub { color: var(--muted); font-size: 0.95rem; }
+.videos { list-style: none; padding-left: 0; }
+.videos li { padding: 10px 0; border-bottom: 1px solid var(--rule); line-height: 1.5; }
+.videos .date { display: block; margin-top: 2px; }
